@@ -6,7 +6,7 @@ class Solution {
         int checkO = 0;
         int checkX = 0;
         
-         for (int i = 0; i < board.length; i++) {
+        for (int i = 0; i < board.length; i++) {
             checkO += countChar(board[i], 'O');
             checkX += countChar(board[i], 'X');
         }
