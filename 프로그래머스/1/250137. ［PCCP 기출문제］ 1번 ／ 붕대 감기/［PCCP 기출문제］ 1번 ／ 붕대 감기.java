@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int solution(int[] bandage, int health, int[][] attacks) {
         int successCount = 0;
-        int currentHealth = health; // 현재 체력 변수 추가
+        int currentHealth = health;
         // 공격 기록을 맵으로 기록
         HashMap<Integer, Integer> attackLog = new HashMap<>();
         for (int[] attack : attacks) {
