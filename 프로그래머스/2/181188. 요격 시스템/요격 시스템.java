@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class Solution {
     public int solution(int[][] targets) {
         // 시작점을 기준으로 오름차순 정렬
+        //[[1,4],[3,7],[4,5],[4,8],[5,12],[10,14],[11,13]]
         Arrays.sort(targets, (a, b) -> Integer.compare(a[0], b[0]));
 
         int count = 0;
