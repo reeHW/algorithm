@@ -20,7 +20,6 @@ class Solution {
         return answer;
     }
 
-    // 주어진 범위의 테두리를 시계방향으로 회전시키고 회전한 숫자 중 최솟값 반환
     private int rotate(int[][] matrix, int[] query) {
         int x1 = query[0] - 1;
         int y1 = query[1] - 1;
