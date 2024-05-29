@@ -19,17 +19,13 @@ class Solution {
     }
 
     private static int countOnes(int n, long start, long end, long l, long r) {
+        
         long length = (long) Math.pow(5, n - 1);
-
-        int[] bitOnesCount = new int[] {
-            (int) Math.pow(4, n - 1),
-            (int) Math.pow(4, n - 1),
-            0,
-            (int) Math.pow(4, n - 1),
-            (int) Math.pow(4, n - 1)
-        };
-
+        int oneCount = (int) Math.pow(4, n - 1);
+        int[] bitOnesCount = new int[] {oneCount, oneCount, 0, oneCount, oneCount};
+        
         int totalOnes = 0;
+        
         for (int i = 0; i < 5; i++) {
             if (i == 2) continue;
             
