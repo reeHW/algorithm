@@ -7,12 +7,12 @@ class Solution {
         int maxSizeOfOneArea = 0;
 
         boolean[][] visited = new boolean[m][n];
-
+        
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (picture[i][j] > 0 && !visited[i][j]) {
                     numberOfArea++;
-                    int areaSize = dfs(picture, visited, i, j, picture[i][j], m, n);
+                    int areaSize = findAreaSize(picture, visited, i, j, picture[i][j], m, n);
                     maxSizeOfOneArea = Math.max(maxSizeOfOneArea, areaSize);
                 }
             }
@@ -21,24 +21,17 @@ class Solution {
         return new int[]{numberOfArea, maxSizeOfOneArea};
     }
 
-    private int dfs(int[][] picture, boolean[][] visited, int x, int y, int color, int m, int n) {
+    private int findAreaSize(int[][] picture, boolean[][] visited, int x, int y, int color, int m, int n) {
+        // 영역을 벗어남
+        if (x < 0 || x >= m || y < 0 || y >= n) return 0;
+        // 방문했거나 색이 다름
+        if (visited[x][y] || picture[x][y] != color) return 0;
+
         visited[x][y] = true;
         int areaSize = 1;
 
         for (int i = 0; i < 4; i++) {
-            int nx = x + dx[i];
-            int ny = y + dy[i];
-            
-            // 범위를 벗어남
-            if(nx < 0 || nx >= m || ny < 0 || ny >= n) continue;
-
-            // 방문한 셀
-            if (visited[nx][ny]) continue;
-            
-            // 같은 색이 아님
-            if(picture[nx][ny] != color) continue;
-            
-            areaSize += dfs(picture, visited, nx, ny, color, m, n);
+            areaSize += findAreaSize(picture, visited, x + dx[i], y + dy[i], color, m, n);
         }
 
         return areaSize;
