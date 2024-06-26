@@ -28,7 +28,13 @@ class Solution {
                 }
             }
         }
-        
+        /*
+       [0, 0, 0, 2, 2, 2, 0, 0], 
+       [0, 0, 0, 0, 2, 2, 0, 0], 
+       [3, 3, 0, 0, 0, 2, 2, 0], 
+       [3, 3, 3, 0, 0, 0, 0, 0], 
+       [3, 3, 3, 0, 0, 0, 4, 4]
+        */
         int maxOil = 0;
         for (int col = 0; col < m; col++) {
             Set<Integer> encounteredOilIds = new HashSet<>();
