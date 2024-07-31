@@ -17,8 +17,8 @@ public class Solution {
             // 진행 중인 과제가 있을 경우
             while (!pausedTasks.isEmpty() && currentTime < startTime) {
                 String[] pausedTask = pausedTasks.pop();
-                int remainingTime = Integer.parseInt(pausedTask[2]);
-                int availableTime = startTime - currentTime;
+                int remainingTime = Integer.parseInt(pausedTask[2]); //일시 중지된 과제의 남은 실행 시간
+                int availableTime = startTime - currentTime; //새로운 과제 시작 전까지 사용할 수 있는 시간
 
                 if (remainingTime <= availableTime) {
                     currentTime += remainingTime;
