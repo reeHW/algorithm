@@ -40,7 +40,7 @@ public class Solution {
             else count--;
             if (count == 0) return i + 1;
         }
-        return p.length(); // 기본적으로 문자열 끝까지를 반환
+        return p.length();
     }
 
     // 올바른 괄호 문자열인지 확인
